@@ -9,11 +9,11 @@ export const CATEGORIES = [
    "healthcare",
    "personal",
    "education",
-   "entertainment"
+   "entertainment",
 ];
 
 const initialState = Object.fromEntries(
-   CATEGORIES.map(category => [category, []])
+   CATEGORIES.map((category) => [category, []])
 );
 
 const transactionsSlice = createSlice({
@@ -21,15 +21,16 @@ const transactionsSlice = createSlice({
    initialState: initialState,
    reducers: {
       addTransaction: (state, action) => {
-         const { category } = action.payload;
+         const { category } = action.paayload;
          state[category].push(action.payload);
       },
       deleteTransaction: (state, action) => {
          const { category, id } = action.payload;
-         state[category] = state[category].filter(transaction =>
-            transaction.id !== id);
-      }
-   }
+         state[category] = state[category].filter(
+            (transaction) => transaction.id != id
+         );
+      },
+   },
 });
 
 // export const addTransaction = (transaction) => {

@@ -9,12 +9,11 @@ export const CATEGORIES = [
    "healthcare",
    "personal",
    "education",
-   "entertainment"
-]
-
-const initialState = CATEGORIES.map(category => ({
+   "entertainment",
+];
+const initialState = CATEGORIES.map((category) => ({
    category: category,
-   amount: 0
+   amount: 0,
 }));
 
 const budgetSlice = createSlice({
@@ -23,13 +22,14 @@ const budgetSlice = createSlice({
    reducers: {
       editBudget: (state, action) => {
          const { category, amount } = action.payload;
-         const budgetToUpdate = state.find(budget =>
-            budget.category === category);
+         const budgetToUpdate = state.find(
+            (budget) => budget.category === category
+         );
          if (budgetToUpdate) {
             budgetToUpdate.amount = amount;
          }
-      }
-   }
+      },
+   },
 });
 
 // export const editBudget = (budget) => {
@@ -54,7 +54,7 @@ const budgetSlice = createSlice({
 //   }
 // };
 
-export const selectBudgets = state => state.budgets;
+export const selectBudgets = (state) => state.budgets;
 // export default budgetsReducer;
 export const { editBudget } = budgetSlice.actions;
 export default budgetSlice.reducer;
