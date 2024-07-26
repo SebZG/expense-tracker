@@ -5,7 +5,7 @@ import store from "./app/store.js";
 
 import './index.css';
 
-import App from './components/App.jsx';
+import App from './app/App.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
